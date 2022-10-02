@@ -2,6 +2,8 @@ package com.sambit.service;
 
 import com.sambit.model.Register;
 
+import java.util.List;
+
 /**
  * @Project : OnlineEducation
  * @Auther : Sambit Kumar Pradhan
@@ -10,4 +12,6 @@ import com.sambit.model.Register;
 public interface MainService {
 	Register saveRegister(Register register);
 	Register chekLogin(String email, String password);
+	Register getRegisterById(int registerId);
+	List<Register> getAllAdmin();
 }

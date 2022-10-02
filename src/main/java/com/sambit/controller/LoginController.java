@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.swing.plaf.synth.Region;
+import java.util.List;
 
 /**
  * @Project : OnlineEducation
@@ -35,7 +36,8 @@ public class LoginController {
 			System.out.println("Inside Admin Login");
 			model.addAttribute("userType", userType);
 			model.addAttribute("data", register);
-		} else if (userType.equals("USER")) {
+			model.addAttribute("adminList", mainService.getAllAdmin());
+		} else if (userType.equals("STUDENT")) {
 			System.out.println("Inside User Login");
 			model.addAttribute("userType", userType);
 			model.addAttribute("data", register);

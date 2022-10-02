@@ -60,4 +60,22 @@ public class MainController {
 			throw new RuntimeException(e);
 		}
 	}
+
+	@PostMapping(value = "/dashboard")
+	public String dashboard(@RequestParam(value = "registerId", required = false) String registerId, Model model) {
+		System.out.println("Inside Dashboard Method------->>");
+		System.out.println("Register Id : " + registerId);
+		Register register = mainService.getRegisterById(Integer.parseInt(registerId));
+		if (register != null && register.getRegisterId() > 0 && register.getUserType().equals("ADMIN")) {
+			model.addAttribute("userType", "ADMIN");
+			model.addAttribute("data", register);
+			return "Dashboard";
+		} else if (register != null && register.getRegisterId() > 0 && register.getUserType().equals("STUDENT")) {
+			model.addAttribute("userType", "STUDENT");
+			model.addAttribute("data", register);
+			return "Dashboard";
+		} else {
+			return "redirect:/login?response=Something Went Wrong";
+		}
+	}
 }

@@ -6,6 +6,8 @@ import com.sambit.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @Project : OnlineEducation
  * @Auther : Sambit Kumar Pradhan
@@ -31,5 +33,15 @@ public class MainServiceImpl implements MainService {
 	@Override
 	public Register chekLogin(String email, String password) {
 		return registerRepository.getRegistersByEmailAndPassword(email, password);
+	}
+
+	@Override
+	public Register getRegisterById(int registerId) {
+		return registerRepository.getReferenceById(registerId);
+	}
+
+	@Override
+	public List<Register> getAllAdmin() {
+		return registerRepository.getAllByUserType("ADMIN");
 	}
 }
