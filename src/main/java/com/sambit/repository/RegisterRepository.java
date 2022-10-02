@@ -9,5 +9,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @Created On : 02/10/2022 - 4:03 PM
  */
 public interface RegisterRepository extends JpaRepository<Register, Integer> {
-
+	Register getRegistersByEmailAndPassword(String email, String password);
 }

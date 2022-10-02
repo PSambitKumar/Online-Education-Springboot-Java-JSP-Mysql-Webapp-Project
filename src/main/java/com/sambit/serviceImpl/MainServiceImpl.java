@@ -27,4 +27,9 @@ public class MainServiceImpl implements MainService {
 			throw new RuntimeException(e);
 		}
 	}
+
+	@Override
+	public Register chekLogin(String email, String password) {
+		return registerRepository.getRegistersByEmailAndPassword(email, password);
+	}
 }

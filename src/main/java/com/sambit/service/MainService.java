@@ -9,4 +9,5 @@ import com.sambit.model.Register;
  */
 public interface MainService {
 	Register saveRegister(Register register);
+	Register chekLogin(String email, String password);
 }
