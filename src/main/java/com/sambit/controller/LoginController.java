@@ -44,6 +44,6 @@ public class LoginController {
 		} else {
 			return "redirect:/login?response=Invalid Username or Password";
 		}
-		return "Dashboard";
+		return "redirect:/dashboard?registerId=" + register.getRegisterId();
 	}
 }

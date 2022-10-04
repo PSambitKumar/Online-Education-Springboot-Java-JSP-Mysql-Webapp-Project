@@ -5,9 +5,7 @@ import com.sambit.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -61,7 +59,7 @@ public class MainController {
 		}
 	}
 
-	@PostMapping(value = "/dashboard")
+	@RequestMapping(value = "/dashboard", method = {RequestMethod.GET, RequestMethod.POST})
 	public String dashboard(@RequestParam(value = "registerId", required = false) String registerId, Model model) {
 		System.out.println("Inside Dashboard Method------->>");
 		System.out.println("Register Id : " + registerId);
