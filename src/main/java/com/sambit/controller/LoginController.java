@@ -9,8 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.swing.plaf.synth.Region;
-import java.util.List;
 
 /**
  * @Project : OnlineEducation
